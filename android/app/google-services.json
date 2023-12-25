@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "848568625713",
+    "project_id": "horamarcada-fd56a",
+    "storage_bucket": "horamarcada-fd56a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848568625713:android:0151ece1af3167a0d24310",
+        "android_client_info": {
+          "package_name": "com.example.hora_marcada"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqpdEOJt8FbIzy6iL3ojZ0HsDG-NwT6u0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
