@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hora_marcada/core/features/login/domain/entities/user_entity.dart';
 
 class UserLoginModel extends Usuario {
@@ -28,4 +29,12 @@ class UserLoginModel extends Usuario {
 
   factory UserLoginModel.fromJson(String source) =>
       UserLoginModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  factory UserLoginModel.fromFirebaseUser(User firebaseUser) {
+    return UserLoginModel(
+      uid: firebaseUser.uid,
+      nome: firebaseUser.displayName ?? '',
+      email: firebaseUser.email ?? '',
+    );
+  }
 }
