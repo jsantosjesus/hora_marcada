@@ -5,12 +5,16 @@ import 'package:hora_marcada/core/features/login/infra/datasources/user_login_da
 import 'package:hora_marcada/core/features/login/infra/models/user_login_model.dart';
 
 class FirebaseLogin implements UserLoginDatasource {
+  final FirebaseAuth auth;
+
+  FirebaseLogin(this.auth);
+
   @override
   Future<Usuario> getUser(String email, String senha) async {
     try {
-      await FirebaseAuth.instance
+      var result = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: senha);
-      User? user = FirebaseAuth.instance.currentUser;
+      User? user = result.user;
       Usuario meuUsuario;
       if (user != null) {
         meuUsuario = UserLoginModel.fromFirebaseUser(user);
@@ -19,7 +23,8 @@ class FirebaseLogin implements UserLoginDatasource {
       }
       return meuUsuario;
     } catch (e) {
-      throw LoginError('erro de firebase');
+      print(e);
+      throw LoginError(e.toString());
     }
   }
 }

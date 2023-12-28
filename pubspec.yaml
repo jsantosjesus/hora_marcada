@@ -41,6 +41,7 @@ dependencies:
   dartz: ^0.10.1
   fluttertest: ^0.0.1
   mocktail: ^1.0.2
+  firebase_auth_platform_interface: ^7.0.9
 
 dev_dependencies:
   flutter_test:
